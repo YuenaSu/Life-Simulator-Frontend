@@ -1,0 +1,19 @@
+:root {
+  /*
+    Global Variables
+    */
+
+  /* Colors */
+  --main-color: #1e88e5;
+  --billionaire-color: #fef7bb;
+  --billionaire-color-shadow: #f9f1a9;
+  --warning-color: #e73e3e;
+
+  /* Layout */
+  --regular: 16px;
+  --medium: 24px;
+  --large: 32px;
+  --xlarge: 48px;
+  --xxlarge: 64px;
+  --xxxlarge: 96px;
+}

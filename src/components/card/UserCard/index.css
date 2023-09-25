@@ -1,0 +1,38 @@
+.admin-user-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.admin-user-card:hover {
+  background-color: #eee;
+}
+
+.admin-user-card-field {
+  flex: 1;
+  padding-right: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #747373;
+}
+
+.admin-user-card-info {
+  flex: 1;
+  padding-right: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: max-height 0.3s;
+}
+
+.admin-user-card-info div {
+  margin-bottom: 5px;
+}

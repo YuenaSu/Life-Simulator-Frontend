@@ -1,0 +1,29 @@
+.asset-card-container {
+  background-color: #d0e9f7;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  height: 150px;
+  justify-content: center;
+}
+
+.asset-card-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.asset-card-item-title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.asset-card-item-value {
+  font-size: 18px;
+  font-weight: bold;
+}

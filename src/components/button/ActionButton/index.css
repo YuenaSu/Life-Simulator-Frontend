@@ -1,0 +1,29 @@
+.action-button-primary {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 12px;
+}
+
+.action-button-warning {
+  background-color: #e73e3e;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 12px;
+}
+
+.action-button-primary:hover {
+  background-color: #1976d2;
+}
+
+.action-button-warning:hover {
+  background-color: #c62828;
+}

@@ -1,0 +1,24 @@
+.game-landing-button-container {
+  width: 100%;
+  height: 60vh;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-landing-money-gif {
+  background-image: url(https://i.pinimg.com/originals/43/d9/78/43d978a3b3c09496881826aaa15ce64c.gif);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30%;
+  height: 100%;
+}
+
+.game-landing-continue-button {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

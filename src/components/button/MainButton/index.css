@@ -1,0 +1,16 @@
+.main-button {
+  margin: 12px;
+  padding: 12px;
+  font-size: large;
+  border-radius: 12px;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--billionaire-color);
+}
+
+.main-button:hover {
+  background-color: var(--billionaire-color-shadow);
+}
+
+.main-button-container {
+  margin: 16px;
+}

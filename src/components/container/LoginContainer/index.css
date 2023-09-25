@@ -1,0 +1,31 @@
+.background {
+  background-image: url(https://i.pinimg.com/originals/47/2e/48/472e488ac82a6a09b10b8969a96bf03a.gif);
+  height: 100vh;
+}
+
+.btn {
+  background-color: rgb(208, 227, 237);
+  color: rgba(15, 51, 71, 0.951);
+}
+
+.login-page-header {
+  margin-left: 30px;
+}
+
+form {
+  display: inline-block;
+}
+
+#form-wrap {
+  display: inline-block;
+  background-color: rgba(255, 250, 228, 0.821);
+}
+
+.panel {
+  margin-top: 25vh;
+  text-align: center;
+}
+
+.login {
+  margin-top: 20px;
+}

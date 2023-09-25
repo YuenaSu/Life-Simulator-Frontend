@@ -1,0 +1,37 @@
+.header-container {
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-family: "Jua", serif;
+  vertical-align: middle;
+  margin-top: 20px;
+}
+
+.logo:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.account-heading {
+  font-size: 46px;
+  margin-right: 30px;
+}
+
+.account-heading:hover {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.account-modal-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+}

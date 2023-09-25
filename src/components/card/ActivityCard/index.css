@@ -1,0 +1,12 @@
+.activity-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--main-color);
+}
+
+.activity-card-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}

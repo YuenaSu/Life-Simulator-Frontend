@@ -1,0 +1,16 @@
+runtime: nodejs18
+
+handlers:
+  - url: /(.*\..+)$
+    static_files: build/\1
+    upload: build/(.*\..+)$
+  - url: /.*
+    static_files: build/index.html
+    upload: build/index.html
+
+env_variables:
+  REACT_APP_BASE_URL: "front_url"
+  REACT_APP_API_BASE_URL: "back_url"
+  REACT_APP_GOOGLE_CLIENT_ID: "google_client_id"
+  REACT_APP_GOOGLE_CLIENT_SECRET: "google_client_secret"
+  DISABLE_ESLINT_PLUGIN: "true"

@@ -1,0 +1,16 @@
+.admin-info-container {
+  display: flex;
+}
+
+.admin-info-container > div {
+  flex: 1;
+}
+
+.admin-user-container {
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+
+.admin-daily-activity {
+  margin-top: 36px;
+}

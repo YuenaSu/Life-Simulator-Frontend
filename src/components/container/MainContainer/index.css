@@ -1,0 +1,6 @@
+@import "../../../constant.css";
+
+.main-container {
+  margin-left: var(--large);
+  margin-right: var(--large);
+}
