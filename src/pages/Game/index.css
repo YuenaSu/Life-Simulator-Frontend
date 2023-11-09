@@ -3,11 +3,51 @@
   width: 100%;
   align-items: center;
   display: flex;
-  background-color: blanchedalmond;
+  background-color: rgba(254, 246, 235, 0.82);
   border-radius: 32px;
   margin: 32px;
   padding: 24px;
 }
+.game-bg {
+  padding-bottom: var(--xxlarge);
+  padding-left: var(--xlarge);
+  padding-right: var(--xlarge);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-image: url("../../../public/phdbg.png");
+  background-repeat: no-repeat;
+}
+.game-title-container {
+  position: absolute;
+  top: 1px;
+  left: 0px;
+  display: flex;
+  border-radius: 32px;
+  /* margin: 20px;
+  padding: 10px; */
+  background-image: url("../../../public/sign.png");
+  background-repeat: no-repeat;
+  min-height: 120px;
+  min-width: 310px;
+  z-index: 20;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .game-image-overlay {
+  position: absolute;
+  top: 1px;
+  left: 10px;
+  background-image: url("../../../public/sign333.png");
+  background-repeat: no-repeat;
+  min-height: 120px;
+  min-width: 310px;
+  z-index: 10;
+} */
 
 .game-message-container:hover {
   cursor: pointer;
@@ -20,16 +60,23 @@
   align-items: center;
 }
 
+#old {
+  display: inline;
+}
+
 .game-image-container {
-  background-image: url("../../assets/study.png");
+  position: relative;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 500px;
+  height: 450px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  margin-bottom: 16px;
+  margin-top: 8px;
+  border-radius: 25px;
 }
 
 .game-action-button-container {

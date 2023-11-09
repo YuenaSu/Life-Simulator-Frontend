@@ -1,6 +1,9 @@
 @import "../../../constant.css";
 
 .main-container {
-  margin-left: var(--large);
-  margin-right: var(--large);
+  margin-left: var(--xxlarge);
+  margin-right: var(--xxlarge);
+  /* overflow: hidden;
+  height: 100vh;
+  box-sizing: border-box; */
 }
