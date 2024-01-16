@@ -2,10 +2,10 @@ import "./index.css";
 
 import Header from "../../general/Header";
 
-export default function MainContainer({ children, ...props }) {
+export default function MainContainer({ children, isGamePage, ...props }) {
   return (
     <div
-      className="main-container"
+      className={isGamePage ? "game-bg" : "main-container"}
       style={{
         justifyContent: props["justify-content"] || "flex-start",
       }}

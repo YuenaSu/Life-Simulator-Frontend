@@ -1,9 +1,23 @@
 @import "../../../constant.css";
 
 .main-container {
-  margin-left: var(--xxlarge);
-  margin-right: var(--xxlarge);
+  margin-left: var(--large);
+  margin-right: var(--large);
   /* overflow: hidden;
   height: 100vh;
   box-sizing: border-box; */
+}
+
+.game-bg {
+  padding-bottom: var(--xxlarge);
+  padding-left: var(--large);
+  padding-right: var(--large);
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-image: url("../../../../public/phdbg.png");
+  background-repeat: no-repeat;
 }

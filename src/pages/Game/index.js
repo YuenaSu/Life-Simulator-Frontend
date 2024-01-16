@@ -92,136 +92,138 @@ export default function Game() {
   }, [game]);
 
   return (
-    <div className="game-bg">
-      <MainContainer>
-        {error ? <div>{error}</div> : null}
-        {game ? (
+    // <div className="game-bg">
+    <MainContainer isGamePage>
+      {error ? <div>{error}</div> : null}
+      {game ? (
+        <div>
           <div>
-            <div>
-              <h4 id="old">
-                You are <h2 id="old">{game.stats.age}</h2> Years old now
-              </h4>
-            </div>
+            <h4 id="old">
+              You are <h2 id="old">{game.stats.age}</h2> Years old now
+            </h4>
+          </div>
 
+          <div
+            className="game-image-container"
+            style={{
+              backgroundImage: `url(${url})`,
+            }}
+          >
+            <div className="game-image-overlay" />
+            <div className="game-title-container">
+              <h5 className="job-title">{game.details.job.title}</h5>
+            </div>
             <div
-              className="game-image-container"
-              style={{
-                backgroundImage: `url(${url})`,
+              className="game-message-container"
+              onClick={() => {
+                setDelay(1);
               }}
             >
-              <div className="game-image-overlay" />
-              <div className="game-title-container">
-                <h5 className="job-title">{game.details.job.title}</h5>
-              </div>
-              <div
-                className="game-message-container"
-                onClick={() => {
-                  setDelay(1);
-                }}
-              >
-                <div>{currentText}</div>
-              </div>
+              <div>{currentText}</div>
             </div>
+          </div>
 
-            <div className="game-bot-button-container">
-              <div className="game-bot-button">
-                <AssetCard
-                  asset={game.stats.asset}
-                  cash={game.stats.cash}
-                  salary={game.details.job.salary}
-                />
-                {showProperties ? (
-                  <div className="game-property-container">
-                    {properties.length === 0 ? (
-                      <div>No properties</div>
-                    ) : (
-                      <div>
-                        {properties.map((property) => (
-                          <div className="game-property" key={property.name}>
-                            <div className="game-property-name">
-                              {property.name}
-                            </div>
-                            <div>
-                              Bought value: {formatDollar(property.value)}
-                            </div>
-                            <div>
-                              Current value:{" "}
-                              {formatDollar(property.currentValue)}
-                            </div>
+          <div className="game-bot-button-container">
+            <div className="game-bot-button">
+              <AssetCard
+                asset={game.stats.asset}
+                cash={game.stats.cash}
+                salary={game.details.job.salary}
+              />
+              {showProperties ? (
+                <div className="game-property-container">
+                  {properties.length === 0 ? (
+                    <div>No properties</div>
+                  ) : (
+                    <div>
+                      {properties.map((property) => (
+                        <div className="game-property" key={property.name}>
+                          <div className="game-property-name">
+                            {property.name}
                           </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : null}
-                <div className="game-action-button-container">
-                  <div className="game-action-button">
-                    <MainButton
-                      onClick={() => {
-                        setProperties(game.details.houses);
-                        setShowProperties(true);
-                      }}
-                      title="Houses"
-                    />
-                    <MainButton
-                      onClick={() => {
-                        setProperties(game.details.cars);
-                        setShowProperties(true);
-                      }}
-                      title="Cars"
-                    />
-                  </div>
-                  <div className="game-action-button">
-                    <MainButton
-                      onClick={() => {
-                        gameService.deleteGame().then(() => {
-                          navigate("/");
+                          <div>
+                            Bought value: {formatDollar(property.value)}
+                          </div>
+                          <div>
+                            Current value: {formatDollar(property.currentValue)}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : null}
+              <div className="game-action-button-container">
+                <div className="game-action-button">
+                  <MainButton
+                    onClick={() => {
+                      // setProperties(game.details.houses);
+                      // setShowProperties(true);
+                      navigate("/game/buy-properties", {
+                        state: game,
+                      });
+                    }}
+                    title="Houses"
+                  />
+                  <MainButton
+                    onClick={() => {
+                      setProperties(game.details.cars);
+                      setShowProperties(true);
+                    }}
+                    title="Cars"
+                  />
+                </div>
+                <div className="game-action-button">
+                  <MainButton
+                    onClick={() => {
+                      gameService.deleteGame().then(() => {
+                        navigate("/");
+                      });
+                    }}
+                    title="Retire Earlier"
+                  />
+                  <MainButton
+                    onClick={() => {
+                      setDisabled(true);
+                      setShowProperties(false);
+                      setDelay(10);
+                      gameService
+                        .nextYear()
+                        .then((res) => {
+                          setCurrentIndex(0);
+                          setCurrentText("");
+                          setDisabled(false);
+                          setGame(res.data?.game);
+                          setMsg(res.data?.game.message);
+                        })
+                        .catch(() => {
+                          setDisabled(false);
                         });
-                      }}
-                      title="Retire Earlier"
-                    />
-                    <MainButton
-                      onClick={() => {
-                        setDisabled(true);
-                        setShowProperties(false);
-                        setDelay(10);
-                        gameService
-                          .nextYear()
-                          .then((res) => {
-                            setCurrentIndex(0);
-                            setCurrentText("");
-                            setDisabled(false);
-                            setGame(res.data?.game);
-                            setMsg(res.data?.game.message);
-                          })
-                          .catch(() => {
-                            setDisabled(false);
-                          });
-                      }}
-                      disabled={disabled}
-                      title="Next Year"
-                    />
-                  </div>
+                    }}
+                    disabled={disabled}
+                    title="Next Year"
+                  />
                 </div>
               </div>
             </div>
           </div>
-        ) : (
-          <Loading />
-        )}
-        <Modal
-          className="account-modal-container"
-          isOpen={showModal}
-          contentLabel="Account"
-          appElement={document.getElementById("root") || undefined}
-        >
-          <GameOverModal
-            setShowModal={setShowModal}
-            setRefresh={setRefresh}
-            refresh={refresh}
-          />
-        </Modal>
-      </MainContainer>
-    </div>
+        </div>
+      ) : (
+        <Loading />
+      )}
+      <Modal
+        className="account-modal-container"
+        isOpen={showModal}
+        contentLabel="Account"
+        appElement={document.getElementById("root") || undefined}
+      >
+        <GameOverModal
+          setShowModal={setShowModal}
+          setRefresh={setRefresh}
+          refresh={refresh}
+        />
+      </Modal>
+    </MainContainer>
+    // </div>
   );
 }

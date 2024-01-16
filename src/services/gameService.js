@@ -10,6 +10,10 @@ function getGame() {
   return api.get(`${END_POINT}/`);
 }
 
+function getProperties() {
+  return api.get(`${END_POINT}/buy-properties`);
+}
+
 function deleteGame() {
   return api.delete(`${END_POINT}/`);
 }
@@ -23,4 +27,5 @@ export default {
   getGame,
   deleteGame,
   nextYear,
+  getProperties,
 };

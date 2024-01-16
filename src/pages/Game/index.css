@@ -8,7 +8,7 @@
   margin: 32px;
   padding: 24px;
 }
-.game-bg {
+/* .game-bg {
   padding-bottom: var(--xxlarge);
   padding-left: var(--xlarge);
   padding-right: var(--xlarge);
@@ -20,7 +20,7 @@
   position: fixed;
   background-image: url("../../../public/phdbg.png");
   background-repeat: no-repeat;
-}
+} */
 .game-title-container {
   position: absolute;
   top: 1px;
@@ -55,6 +55,7 @@
 
 .game-bot-button {
   margin-right: 24px;
+  margin-top: 35px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,7 +71,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  height: 450px;
+  height: 400px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -88,10 +89,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 32px;
   padding: 12px;
   background-color: blanchedalmond;
-  height: 150px;
+  height: 130px;
   width: 31%;
   overflow-y: scroll;
 }

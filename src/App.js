@@ -8,6 +8,7 @@ import PrivateRoute from "./components/general/PrivateRoute";
 import Login from "./pages/Login";
 import GameLanding from "./pages/GameLanding";
 import Game from "./pages/Game";
+import BuyProperties from "./pages/BuyProperties";
 import Admin from "./pages/Admin";
 import NotFound from "./components/general/NotFound";
 import Register from "./pages/Register";
@@ -34,6 +35,14 @@ function App() {
             element={
               <PrivateRoute>
                 <Game />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/game/buy-properties"
+            element={
+              <PrivateRoute>
+                <BuyProperties />
               </PrivateRoute>
             }
           />
